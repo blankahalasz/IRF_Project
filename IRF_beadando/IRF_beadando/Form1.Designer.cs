@@ -38,6 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.buttonUjEredemeny = new System.Windows.Forms.Button();
             this.textBoxEdzok = new System.Windows.Forms.TextBox();
+            this.buttonChart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chartEredmenyek)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             // 
             this.listBoxEdzok.FormattingEnabled = true;
             this.listBoxEdzok.ItemHeight = 16;
-            this.listBoxEdzok.Location = new System.Drawing.Point(38, 128);
+            this.listBoxEdzok.Location = new System.Drawing.Point(38, 114);
             this.listBoxEdzok.Name = "listBoxEdzok";
             this.listBoxEdzok.Size = new System.Drawing.Size(214, 84);
             this.listBoxEdzok.TabIndex = 0;
@@ -66,7 +67,7 @@
             this.chartEredmenyek.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartEredmenyek.Legends.Add(legend1);
-            this.chartEredmenyek.Location = new System.Drawing.Point(517, 52);
+            this.chartEredmenyek.Location = new System.Drawing.Point(738, 52);
             this.chartEredmenyek.Name = "chartEredmenyek";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -79,7 +80,7 @@
             // labelEdzok
             // 
             this.labelEdzok.AutoSize = true;
-            this.labelEdzok.Location = new System.Drawing.Point(35, 52);
+            this.labelEdzok.Location = new System.Drawing.Point(35, 24);
             this.labelEdzok.Name = "labelEdzok";
             this.labelEdzok.Size = new System.Drawing.Size(140, 17);
             this.labelEdzok.TabIndex = 3;
@@ -105,17 +106,28 @@
             // 
             // textBoxEdzok
             // 
-            this.textBoxEdzok.Location = new System.Drawing.Point(38, 84);
+            this.textBoxEdzok.Location = new System.Drawing.Point(38, 65);
             this.textBoxEdzok.Name = "textBoxEdzok";
             this.textBoxEdzok.Size = new System.Drawing.Size(100, 22);
             this.textBoxEdzok.TabIndex = 6;
             this.textBoxEdzok.TextChanged += new System.EventHandler(this.TextBoxEdzok_TextChanged);
             // 
+            // buttonChart
+            // 
+            this.buttonChart.Location = new System.Drawing.Point(542, 97);
+            this.buttonChart.Name = "buttonChart";
+            this.buttonChart.Size = new System.Drawing.Size(150, 71);
+            this.buttonChart.TabIndex = 7;
+            this.buttonChart.Text = "Eredmények megjelenítése diagrammon";
+            this.buttonChart.UseVisualStyleBackColor = true;
+            this.buttonChart.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1048, 527);
+            this.ClientSize = new System.Drawing.Size(1166, 527);
+            this.Controls.Add(this.buttonChart);
             this.Controls.Add(this.textBoxEdzok);
             this.Controls.Add(this.buttonUjEredemeny);
             this.Controls.Add(this.label2);
@@ -139,6 +151,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonUjEredemeny;
         private System.Windows.Forms.TextBox textBoxEdzok;
+        private System.Windows.Forms.Button buttonChart;
     }
 }
 

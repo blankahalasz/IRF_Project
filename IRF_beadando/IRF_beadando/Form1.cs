@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace IRF_beadando
 {
     public partial class Form1 : Form
     {
         Database1Entities1 context = new Database1Entities1();
+        BindingList<Eredmeny> eredmenychart = new BindingList<Eredmeny>();
         public Form1()
         {
             InitializeComponent();
@@ -20,8 +22,34 @@ namespace IRF_beadando
             listBoxSportolok.DisplayMember = "SNev";
             listEdzok();
             
+        }
+
+        private void CreateChart()
+        {
+            var selectedsportolo = ((Sportolo)listBoxSportolok.SelectedItem).SFELH_NEV;
+            var eredmeny = from x in context.Eredmenies
+                           where x.SFELH_NEV_FK == selectedsportolo
+                           select x;
+
+            chartEredmenyek.DataSource = eredmeny.ToList();
+
+            var series = chartEredmenyek.Series[0];
+            series.ChartType = SeriesChartType.Line;
+            series.XValueMember = "Datum";
+            series.YValueMembers = "Pont";
+
+            var legend = chartEredmenyek.Legends[0];
+            legend.Enabled = false;
+
+            var chartArea = chartEredmenyek.ChartAreas[0];
+            chartArea.AxisX.MajorGrid.Enabled = false;
+            chartArea.AxisY.MajorGrid.Enabled = false;
+            chartArea.AxisY.IsStartedFromZero = false;
 
         }
+
+       
+
         public void listEdzok()
         {
             var edzok = (from x in context.Edzoes
@@ -52,6 +80,11 @@ namespace IRF_beadando
             
             
             
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            CreateChart();
         }
     }
 }
