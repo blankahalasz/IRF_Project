@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Edzo">
+          <Key>
+            <PropertyRef Name="FELH_NEV" />
+          </Key>
+          <Property Name="FELH_NEV" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NEV" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="EMAIL" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="JELSZO" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Eredmeny">
+          <Key>
+            <PropertyRef Name="EREDMENY_ID" />
+          </Key>
+          <Property Name="EREDMENY_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SFELH_NEV_FK" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EDZO_FELH_NEV_FK" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DATUM" Type="date" Nullable="false" />
+          <Property Name="PONT" Type="int" />
+        </EntityType>
+        <EntityType Name="Sportolo">
+          <Key>
+            <PropertyRef Name="SFELH_NEV" />
+          </Key>
+          <Property Name="SFELH_NEV" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NEV" Type="nvarchar(max)" />
+          <Property Name="SZULDAT" Type="date" />
+          <Property Name="EDZO_FK" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Eredmeny_Edzo">
+          <End Role="Edzo" Type="Self.Edzo" Multiplicity="1" />
+          <End Role="Eredmeny" Type="Self.Eredmeny" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Edzo">
+              <PropertyRef Name="FELH_NEV" />
+            </Principal>
+            <Dependent Role="Eredmeny">
+              <PropertyRef Name="EDZO_FELH_NEV_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Eredmeny_Sportolo">
+          <End Role="Sportolo" Type="Self.Sportolo" Multiplicity="1" />
+          <End Role="Eredmeny" Type="Self.Eredmeny" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sportolo">
+              <PropertyRef Name="SFELH_NEV" />
+            </Principal>
+            <Dependent Role="Eredmeny">
+              <PropertyRef Name="SFELH_NEV_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sportolo_Edzo">
+          <End Role="Edzo" Type="Self.Edzo" Multiplicity="0..1" />
+          <End Role="Sportolo" Type="Self.Sportolo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Edzo">
+              <PropertyRef Name="FELH_NEV" />
+            </Principal>
+            <Dependent Role="Sportolo">
+              <PropertyRef Name="EDZO_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="Edzo" EntityType="Self.Edzo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Eredmeny" EntityType="Self.Eredmeny" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sportolo" EntityType="Self.Sportolo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Eredmeny_Edzo" Association="Self.FK_Eredmeny_Edzo">
+            <End Role="Edzo" EntitySet="Edzo" />
+            <End Role="Eredmeny" EntitySet="Eredmeny" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Eredmeny_Sportolo" Association="Self.FK_Eredmeny_Sportolo">
+            <End Role="Sportolo" EntitySet="Sportolo" />
+            <End Role="Eredmeny" EntitySet="Eredmeny" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sportolo_Edzo" Association="Self.FK_Sportolo_Edzo">
+            <End Role="Edzo" EntitySet="Edzo" />
+            <End Role="Sportolo" EntitySet="Sportolo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Edzo">
+          <Key>
+            <PropertyRef Name="FELH_NEV" />
+          </Key>
+          <Property Name="FELH_NEV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NEV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="JELSZO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Eredmenies" Relationship="Self.FK_Eredmeny_Edzo" FromRole="Edzo" ToRole="Eredmeny" />
+          <NavigationProperty Name="Sportoloes" Relationship="Self.FK_Sportolo_Edzo" FromRole="Edzo" ToRole="Sportolo" />
+        </EntityType>
+        <EntityType Name="Eredmeny">
+          <Key>
+            <PropertyRef Name="EREDMENY_ID" />
+          </Key>
+          <Property Name="EREDMENY_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SFELH_NEV_FK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EDZO_FELH_NEV_FK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DATUM" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PONT" Type="Int32" />
+          <NavigationProperty Name="Edzo" Relationship="Self.FK_Eredmeny_Edzo" FromRole="Eredmeny" ToRole="Edzo" />
+          <NavigationProperty Name="Sportolo" Relationship="Self.FK_Eredmeny_Sportolo" FromRole="Eredmeny" ToRole="Sportolo" />
+        </EntityType>
+        <EntityType Name="Sportolo">
+          <Key>
+            <PropertyRef Name="SFELH_NEV" />
+          </Key>
+          <Property Name="SFELH_NEV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NEV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SZULDAT" Type="DateTime" Precision="0" />
+          <Property Name="EDZO_FK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Edzo" Relationship="Self.FK_Sportolo_Edzo" FromRole="Sportolo" ToRole="Edzo" />
+          <NavigationProperty Name="Eredmenies" Relationship="Self.FK_Eredmeny_Sportolo" FromRole="Sportolo" ToRole="Eredmeny" />
+        </EntityType>
+        <Association Name="FK_Eredmeny_Edzo">
+          <End Role="Edzo" Type="Self.Edzo" Multiplicity="1" />
+          <End Role="Eredmeny" Type="Self.Eredmeny" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Edzo">
+              <PropertyRef Name="FELH_NEV" />
+            </Principal>
+            <Dependent Role="Eredmeny">
+              <PropertyRef Name="EDZO_FELH_NEV_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sportolo_Edzo">
+          <End Role="Edzo" Type="Self.Edzo" Multiplicity="0..1" />
+          <End Role="Sportolo" Type="Self.Sportolo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Edzo">
+              <PropertyRef Name="FELH_NEV" />
+            </Principal>
+            <Dependent Role="Sportolo">
+              <PropertyRef Name="EDZO_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Eredmeny_Sportolo">
+          <End Role="Sportolo" Type="Self.Sportolo" Multiplicity="1" />
+          <End Role="Eredmeny" Type="Self.Eredmeny" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sportolo">
+              <PropertyRef Name="SFELH_NEV" />
+            </Principal>
+            <Dependent Role="Eredmeny">
+              <PropertyRef Name="SFELH_NEV_FK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Edzoes" EntityType="Self.Edzo" />
+          <EntitySet Name="Eredmenies" EntityType="Self.Eredmeny" />
+          <EntitySet Name="Sportoloes" EntityType="Self.Sportolo" />
+          <AssociationSet Name="FK_Eredmeny_Edzo" Association="Self.FK_Eredmeny_Edzo">
+            <End Role="Edzo" EntitySet="Edzoes" />
+            <End Role="Eredmeny" EntitySet="Eredmenies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sportolo_Edzo" Association="Self.FK_Sportolo_Edzo">
+            <End Role="Edzo" EntitySet="Edzoes" />
+            <End Role="Sportolo" EntitySet="Sportoloes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Eredmeny_Sportolo" Association="Self.FK_Eredmeny_Sportolo">
+            <End Role="Sportolo" EntitySet="Sportoloes" />
+            <End Role="Eredmeny" EntitySet="Eredmenies" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+          <EntitySetMapping Name="Edzoes">
+            <EntityTypeMapping TypeName="Database1Model.Edzo">
+              <MappingFragment StoreEntitySet="Edzo">
+                <ScalarProperty Name="FELH_NEV" ColumnName="FELH_NEV" />
+                <ScalarProperty Name="NEV" ColumnName="NEV" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="JELSZO" ColumnName="JELSZO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Eredmenies">
+            <EntityTypeMapping TypeName="Database1Model.Eredmeny">
+              <MappingFragment StoreEntitySet="Eredmeny">
+                <ScalarProperty Name="EREDMENY_ID" ColumnName="EREDMENY_ID" />
+                <ScalarProperty Name="SFELH_NEV_FK" ColumnName="SFELH_NEV_FK" />
+                <ScalarProperty Name="EDZO_FELH_NEV_FK" ColumnName="EDZO_FELH_NEV_FK" />
+                <ScalarProperty Name="DATUM" ColumnName="DATUM" />
+                <ScalarProperty Name="PONT" ColumnName="PONT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sportoloes">
+            <EntityTypeMapping TypeName="Database1Model.Sportolo">
+              <MappingFragment StoreEntitySet="Sportolo">
+                <ScalarProperty Name="SFELH_NEV" ColumnName="SFELH_NEV" />
+                <ScalarProperty Name="NEV" ColumnName="NEV" />
+                <ScalarProperty Name="SZULDAT" ColumnName="SZULDAT" />
+                <ScalarProperty Name="EDZO_FK" ColumnName="EDZO_FK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
