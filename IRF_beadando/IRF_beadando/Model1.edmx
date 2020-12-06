@@ -29,7 +29,7 @@
             <PropertyRef Name="SFELH_NEV" />
           </Key>
           <Property Name="SFELH_NEV" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="NEV" Type="nvarchar(max)" />
+          <Property Name="SNEV" Type="nvarchar(max)" />
           <Property Name="SZULDAT" Type="date" />
           <Property Name="EDZO_FK" Type="nvarchar" MaxLength="50" />
         </EntityType>
@@ -57,7 +57,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Sportolo_Edzo">
+        <Association Name="FK_Sportolo_ToEdzo">
           <End Role="Edzo" Type="Self.Edzo" Multiplicity="0..1" />
           <End Role="Sportolo" Type="Self.Sportolo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -81,7 +81,7 @@
             <End Role="Sportolo" EntitySet="Sportolo" />
             <End Role="Eredmeny" EntitySet="Eredmeny" />
           </AssociationSet>
-          <AssociationSet Name="FK_Sportolo_Edzo" Association="Self.FK_Sportolo_Edzo">
+          <AssociationSet Name="FK_Sportolo_ToEdzo" Association="Self.FK_Sportolo_ToEdzo">
             <End Role="Edzo" EntitySet="Edzo" />
             <End Role="Sportolo" EntitySet="Sportolo" />
           </AssociationSet>
@@ -100,7 +100,7 @@
           <Property Name="EMAIL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="JELSZO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Eredmenies" Relationship="Self.FK_Eredmeny_Edzo" FromRole="Edzo" ToRole="Eredmeny" />
-          <NavigationProperty Name="Sportoloes" Relationship="Self.FK_Sportolo_Edzo" FromRole="Edzo" ToRole="Sportolo" />
+          <NavigationProperty Name="Sportoloes" Relationship="Self.FK_Sportolo_ToEdzo" FromRole="Edzo" ToRole="Sportolo" />
         </EntityType>
         <EntityType Name="Eredmeny">
           <Key>
@@ -119,10 +119,10 @@
             <PropertyRef Name="SFELH_NEV" />
           </Key>
           <Property Name="SFELH_NEV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="NEV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SNEV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="SZULDAT" Type="DateTime" Precision="0" />
           <Property Name="EDZO_FK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Edzo" Relationship="Self.FK_Sportolo_Edzo" FromRole="Sportolo" ToRole="Edzo" />
+          <NavigationProperty Name="Edzo" Relationship="Self.FK_Sportolo_ToEdzo" FromRole="Sportolo" ToRole="Edzo" />
           <NavigationProperty Name="Eredmenies" Relationship="Self.FK_Eredmeny_Sportolo" FromRole="Sportolo" ToRole="Eredmeny" />
         </EntityType>
         <Association Name="FK_Eredmeny_Edzo">
@@ -137,7 +137,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Sportolo_Edzo">
+        <Association Name="FK_Sportolo_ToEdzo">
           <End Role="Edzo" Type="Self.Edzo" Multiplicity="0..1" />
           <End Role="Sportolo" Type="Self.Sportolo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -161,7 +161,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Database1Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Edzoes" EntityType="Self.Edzo" />
           <EntitySet Name="Eredmenies" EntityType="Self.Eredmeny" />
           <EntitySet Name="Sportoloes" EntityType="Self.Sportolo" />
@@ -169,7 +169,7 @@
             <End Role="Edzo" EntitySet="Edzoes" />
             <End Role="Eredmeny" EntitySet="Eredmenies" />
           </AssociationSet>
-          <AssociationSet Name="FK_Sportolo_Edzo" Association="Self.FK_Sportolo_Edzo">
+          <AssociationSet Name="FK_Sportolo_ToEdzo" Association="Self.FK_Sportolo_ToEdzo">
             <End Role="Edzo" EntitySet="Edzoes" />
             <End Role="Sportolo" EntitySet="Sportoloes" />
           </AssociationSet>
@@ -183,7 +183,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities1">
           <EntitySetMapping Name="Edzoes">
             <EntityTypeMapping TypeName="Database1Model.Edzo">
               <MappingFragment StoreEntitySet="Edzo">
@@ -209,7 +209,7 @@
             <EntityTypeMapping TypeName="Database1Model.Sportolo">
               <MappingFragment StoreEntitySet="Sportolo">
                 <ScalarProperty Name="SFELH_NEV" ColumnName="SFELH_NEV" />
-                <ScalarProperty Name="NEV" ColumnName="NEV" />
+                <ScalarProperty Name="SNEV" ColumnName="SNEV" />
                 <ScalarProperty Name="SZULDAT" ColumnName="SZULDAT" />
                 <ScalarProperty Name="EDZO_FK" ColumnName="EDZO_FK" />
               </MappingFragment>
