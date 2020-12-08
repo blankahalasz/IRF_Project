@@ -14,7 +14,6 @@ namespace IRF_beadando
     public partial class Form1 : Form
     {
         Database1Entities1 context = new Database1Entities1();
-        BindingList<Eredmeny> eredmenychart = new BindingList<Eredmeny>();
         public Form1()
         {
             InitializeComponent();
@@ -82,7 +81,7 @@ namespace IRF_beadando
             
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void ButtonChart_Click(object sender, EventArgs e)
         {
             CreateChart();
         }

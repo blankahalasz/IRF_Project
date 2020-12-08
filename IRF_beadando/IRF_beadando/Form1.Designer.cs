@@ -120,7 +120,7 @@
             this.buttonChart.TabIndex = 7;
             this.buttonChart.Text = "Eredmények megjelenítése diagrammon";
             this.buttonChart.UseVisualStyleBackColor = true;
-            this.buttonChart.Click += new System.EventHandler(this.Button1_Click);
+            this.buttonChart.Click += new System.EventHandler(this.ButtonChart_Click);
             // 
             // Form1
             // 
