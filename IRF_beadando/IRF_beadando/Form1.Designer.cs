@@ -46,7 +46,7 @@
             // 
             this.listBoxEdzok.FormattingEnabled = true;
             this.listBoxEdzok.ItemHeight = 16;
-            this.listBoxEdzok.Location = new System.Drawing.Point(38, 114);
+            this.listBoxEdzok.Location = new System.Drawing.Point(27, 106);
             this.listBoxEdzok.Name = "listBoxEdzok";
             this.listBoxEdzok.Size = new System.Drawing.Size(214, 84);
             this.listBoxEdzok.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             this.listBoxSportolok.FormattingEnabled = true;
             this.listBoxSportolok.ItemHeight = 16;
-            this.listBoxSportolok.Location = new System.Drawing.Point(326, 84);
+            this.listBoxSportolok.Location = new System.Drawing.Point(283, 85);
             this.listBoxSportolok.Name = "listBoxSportolok";
             this.listBoxSportolok.Size = new System.Drawing.Size(167, 84);
             this.listBoxSportolok.TabIndex = 1;
@@ -80,7 +80,7 @@
             // labelEdzok
             // 
             this.labelEdzok.AutoSize = true;
-            this.labelEdzok.Location = new System.Drawing.Point(35, 24);
+            this.labelEdzok.Location = new System.Drawing.Point(24, 32);
             this.labelEdzok.Name = "labelEdzok";
             this.labelEdzok.Size = new System.Drawing.Size(140, 17);
             this.labelEdzok.TabIndex = 3;
@@ -89,7 +89,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(323, 52);
+            this.label2.Location = new System.Drawing.Point(280, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 17);
             this.label2.TabIndex = 4;
@@ -97,7 +97,7 @@
             // 
             // buttonUjEredemeny
             // 
-            this.buttonUjEredemeny.Location = new System.Drawing.Point(38, 238);
+            this.buttonUjEredemeny.Location = new System.Drawing.Point(27, 228);
             this.buttonUjEredemeny.Name = "buttonUjEredemeny";
             this.buttonUjEredemeny.Size = new System.Drawing.Size(175, 59);
             this.buttonUjEredemeny.TabIndex = 5;
@@ -106,7 +106,7 @@
             // 
             // textBoxEdzok
             // 
-            this.textBoxEdzok.Location = new System.Drawing.Point(38, 65);
+            this.textBoxEdzok.Location = new System.Drawing.Point(27, 62);
             this.textBoxEdzok.Name = "textBoxEdzok";
             this.textBoxEdzok.Size = new System.Drawing.Size(100, 22);
             this.textBoxEdzok.TabIndex = 6;
@@ -114,7 +114,7 @@
             // 
             // buttonChart
             // 
-            this.buttonChart.Location = new System.Drawing.Point(542, 97);
+            this.buttonChart.Location = new System.Drawing.Point(504, 85);
             this.buttonChart.Name = "buttonChart";
             this.buttonChart.Size = new System.Drawing.Size(150, 71);
             this.buttonChart.TabIndex = 7;

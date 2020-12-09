@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -13,6 +14,8 @@ namespace IRF_beadando
 {
     public partial class Form1 : Form
     {
+        private List<Sign> _sign = new List<Sign>();
+
         Database1Entities1 context = new Database1Entities1();
         public Form1()
         {
