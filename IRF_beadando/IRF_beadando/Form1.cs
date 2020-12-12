@@ -14,7 +14,6 @@ namespace IRF_beadando
 {
     public partial class Form1 : Form
     {
-        private List<Sign> _sign = new List<Sign>();
 
         Database1Entities1 context = new Database1Entities1();
         public Form1()
@@ -23,7 +22,8 @@ namespace IRF_beadando
             listBoxEdzok.DisplayMember = "Nev";
             listBoxSportolok.DisplayMember = "SNev";
             listEdzok();
-            
+
+
         }
 
         private void CreateChart()
@@ -79,14 +79,21 @@ namespace IRF_beadando
 
             listBoxSportolok.DisplayMember = "SNEV";
             listBoxSportolok.DataSource = sportolo.ToList();
-            
-            
+              
             
         }
 
         private void ButtonChart_Click(object sender, EventArgs e)
         {
+
             CreateChart();
+
+        }
+
+        private void ButtonUjEredemeny_Click(object sender, EventArgs e)
+        {
+            Form3 f3 = new Form3();
+            f3.Show();
         }
     }
 }

@@ -33,12 +33,12 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.listBoxEdzok = new System.Windows.Forms.ListBox();
             this.listBoxSportolok = new System.Windows.Forms.ListBox();
-            this.chartEredmenyek = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.labelEdzok = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonUjEredemeny = new System.Windows.Forms.Button();
             this.textBoxEdzok = new System.Windows.Forms.TextBox();
             this.buttonChart = new System.Windows.Forms.Button();
+            this.chartEredmenyek = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chartEredmenyek)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,22 +61,6 @@
             this.listBoxSportolok.Size = new System.Drawing.Size(167, 84);
             this.listBoxSportolok.TabIndex = 1;
             // 
-            // chartEredmenyek
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chartEredmenyek.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartEredmenyek.Legends.Add(legend1);
-            this.chartEredmenyek.Location = new System.Drawing.Point(738, 52);
-            this.chartEredmenyek.Name = "chartEredmenyek";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartEredmenyek.Series.Add(series1);
-            this.chartEredmenyek.Size = new System.Drawing.Size(396, 387);
-            this.chartEredmenyek.TabIndex = 2;
-            this.chartEredmenyek.Text = "chart1";
-            // 
             // labelEdzok
             // 
             this.labelEdzok.AutoSize = true;
@@ -97,12 +81,13 @@
             // 
             // buttonUjEredemeny
             // 
-            this.buttonUjEredemeny.Location = new System.Drawing.Point(27, 228);
+            this.buttonUjEredemeny.Location = new System.Drawing.Point(27, 332);
             this.buttonUjEredemeny.Name = "buttonUjEredemeny";
             this.buttonUjEredemeny.Size = new System.Drawing.Size(175, 59);
             this.buttonUjEredemeny.TabIndex = 5;
             this.buttonUjEredemeny.Text = "Új eredmény hozzáadása";
             this.buttonUjEredemeny.UseVisualStyleBackColor = true;
+            this.buttonUjEredemeny.Click += new System.EventHandler(this.ButtonUjEredemeny_Click);
             // 
             // textBoxEdzok
             // 
@@ -122,17 +107,33 @@
             this.buttonChart.UseVisualStyleBackColor = true;
             this.buttonChart.Click += new System.EventHandler(this.ButtonChart_Click);
             // 
+            // chartEredmenyek
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartEredmenyek.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartEredmenyek.Legends.Add(legend1);
+            this.chartEredmenyek.Location = new System.Drawing.Point(718, 49);
+            this.chartEredmenyek.Name = "chartEredmenyek";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartEredmenyek.Series.Add(series1);
+            this.chartEredmenyek.Size = new System.Drawing.Size(396, 387);
+            this.chartEredmenyek.TabIndex = 2;
+            this.chartEredmenyek.Text = "chart1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1166, 527);
+            this.Controls.Add(this.chartEredmenyek);
             this.Controls.Add(this.buttonChart);
             this.Controls.Add(this.textBoxEdzok);
             this.Controls.Add(this.buttonUjEredemeny);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelEdzok);
-            this.Controls.Add(this.chartEredmenyek);
             this.Controls.Add(this.listBoxSportolok);
             this.Controls.Add(this.listBoxEdzok);
             this.Name = "Form1";
@@ -146,12 +147,12 @@
 
         private System.Windows.Forms.ListBox listBoxEdzok;
         private System.Windows.Forms.ListBox listBoxSportolok;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartEredmenyek;
         private System.Windows.Forms.Label labelEdzok;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonUjEredemeny;
         private System.Windows.Forms.TextBox textBoxEdzok;
         private System.Windows.Forms.Button buttonChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartEredmenyek;
     }
 }
 

@@ -13,12 +13,12 @@ namespace IRF_beadando
         public Sign()
         {
             AutoSize = false;
-            Width = 40;
+            Width = 70;
             Height = Width;
-            Paint += Sign_Paing;
+            Paint += Sign_Paint;
         }
 
-        private void Sign_Paing(object sender, PaintEventArgs e)
+        private void Sign_Paint(object sender, PaintEventArgs e)
         {
             DrawImage(e.Graphics);
         }
