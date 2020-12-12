@@ -7,9 +7,12 @@ using System.Threading.Tasks;
 
 namespace IRF_beadando
 {
-    public class EredmenyManager
+    public class EredmenyManager : IEredmenyManager
     {
-        BindingList<Eredmeny> eredmenyek { get; } = new BindingList<Eredmeny>();
+        public BindingList<Eredmeny> eredmenyek { get; } = new BindingList<Eredmeny>();
+
+        public BindingList<Eredmeny> Eredmenies => throw new NotImplementedException();
+
         public Eredmeny CreateEredmeny(Eredmeny eredmeny)
         {
             var letezoEredmeny = (from x in eredmenyek
