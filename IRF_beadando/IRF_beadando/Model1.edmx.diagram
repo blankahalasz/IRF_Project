@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bbf218a83efd4b138ad808881365f989" Name="Diagram1">
-        <EntityTypeShape EntityType="Database1Model.Edzo" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Eredmeny" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Sportolo" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
-        <AssociationConnector Association="Database1Model.FK_Eredmeny_Edzo" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.FK_Sportolo_ToEdzo" ManuallyRouted="false" />
-        <AssociationConnector Association="Database1Model.FK_Eredmeny_Sportolo" ManuallyRouted="false" />
+      <Diagram DiagramId="2bac4c4a4d34479db26d1470881a6070" Name="Diagram1">
+        <EntityTypeShape EntityType="Database2Model.Edzo" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database2Model.Eredmeny" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database2Model.Sportolo" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="Database2Model.FK_Eredmeny_ToEdzo" ManuallyRouted="false" />
+        <AssociationConnector Association="Database2Model.FK_Sportolo_ToEdzo" ManuallyRouted="false" />
+        <AssociationConnector Association="Database2Model.FK_Eredmeny_ToSportolo" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

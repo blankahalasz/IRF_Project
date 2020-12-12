@@ -12,7 +12,7 @@ namespace IRF_beadando
 {
     public partial class Form2 : Form
     {
-        Database1Entities1 context = new Database1Entities1();
+        Database2Entities context = new Database2Entities();
         public Form2()
         {
             InitializeComponent();

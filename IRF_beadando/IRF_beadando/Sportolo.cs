@@ -22,7 +22,7 @@ namespace IRF_beadando
     
         public string SFELH_NEV { get; set; }
         public string SNEV { get; set; }
-        public Nullable<System.DateTime> SZULDAT { get; set; }
+        public System.DateTime SZULDAT { get; set; }
         public string EDZO_FK { get; set; }
     
         public virtual Edzo Edzo { get; set; }
