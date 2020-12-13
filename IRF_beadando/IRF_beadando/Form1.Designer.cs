@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.listBoxEdzok = new System.Windows.Forms.ListBox();
             this.listBoxSportolok = new System.Windows.Forms.ListBox();
             this.labelEdzok = new System.Windows.Forms.Label();
@@ -115,16 +115,16 @@
             // 
             // chartEredmenyek
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chartEredmenyek.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chartEredmenyek.Legends.Add(legend6);
+            chartArea3.Name = "ChartArea1";
+            this.chartEredmenyek.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartEredmenyek.Legends.Add(legend3);
             this.chartEredmenyek.Location = new System.Drawing.Point(718, 49);
             this.chartEredmenyek.Name = "chartEredmenyek";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chartEredmenyek.Series.Add(series6);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartEredmenyek.Series.Add(series3);
             this.chartEredmenyek.Size = new System.Drawing.Size(396, 387);
             this.chartEredmenyek.TabIndex = 2;
             this.chartEredmenyek.Text = "chart1";
@@ -141,7 +141,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Location = new System.Drawing.Point(27, 335);
+            this.panel1.Location = new System.Drawing.Point(27, 352);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(685, 191);
             this.panel1.TabIndex = 9;

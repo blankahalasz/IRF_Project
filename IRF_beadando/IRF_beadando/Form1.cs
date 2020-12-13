@@ -47,9 +47,11 @@ namespace IRF_beadando
             chartEredmenyek.DataSource = eredmeny.ToList();
 
             var series = chartEredmenyek.Series[0];
+            series.XValueType = ChartValueType.DateTime;
             series.ChartType = SeriesChartType.Line;
-            series.XValueMember = ("Datum");
+            series.XValueMember = ("Datum") ;
             series.YValueMembers = "Pont";
+
 
             var legend = chartEredmenyek.Legends[0];
             legend.Enabled = false;
@@ -136,7 +138,7 @@ namespace IRF_beadando
             g.DrawLine(pen, 460, 80, 460, 110);
             g.DrawLine(pen, 470, 80, 470, 110);
             Image imageFile = Image.FromFile("Images/gun.png");
-            g.DrawImage(imageFile, new Rectangle(-30, -5, 80, 50));
+            g.DrawImage(imageFile, new Rectangle(-15, -5, 100, 50));
 
            
 
@@ -146,7 +148,7 @@ namespace IRF_beadando
         {
             var bullet = Factory.CreateNew();
             _bullets.Add(bullet);
-            bullet.Left = 48;
+            bullet.Left = 88;
             panel1.Controls.Add(bullet);
         }
 
@@ -163,7 +165,7 @@ namespace IRF_beadando
                    
             }
 
-            if (maxPosition > 448)
+            if (maxPosition > 443)
             {
                 var oldestBullet = _bullets[0];
                 panel1.Controls.Remove(oldestBullet);
