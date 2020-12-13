@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.listBoxEdzok = new System.Windows.Forms.ListBox();
             this.listBoxSportolok = new System.Windows.Forms.ListBox();
             this.labelEdzok = new System.Windows.Forms.Label();
@@ -39,6 +40,10 @@
             this.textBoxEdzok = new System.Windows.Forms.TextBox();
             this.buttonChart = new System.Windows.Forms.Button();
             this.chartEredmenyek = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.listBoxEredmenyek = new System.Windows.Forms.ListBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.createTimer = new System.Windows.Forms.Timer(this.components);
+            this.conveyorTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.chartEredmenyek)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +65,7 @@
             this.listBoxSportolok.Name = "listBoxSportolok";
             this.listBoxSportolok.Size = new System.Drawing.Size(167, 84);
             this.listBoxSportolok.TabIndex = 1;
+            this.listBoxSportolok.SelectedIndexChanged += new System.EventHandler(this.ListBoxSportolok_SelectedIndexChanged);
             // 
             // labelEdzok
             // 
@@ -81,7 +87,7 @@
             // 
             // buttonUjEredemeny
             // 
-            this.buttonUjEredemeny.Location = new System.Drawing.Point(27, 332);
+            this.buttonUjEredemeny.Location = new System.Drawing.Point(27, 234);
             this.buttonUjEredemeny.Name = "buttonUjEredemeny";
             this.buttonUjEredemeny.Size = new System.Drawing.Size(175, 59);
             this.buttonUjEredemeny.TabIndex = 5;
@@ -99,7 +105,7 @@
             // 
             // buttonChart
             // 
-            this.buttonChart.Location = new System.Drawing.Point(504, 85);
+            this.buttonChart.Location = new System.Drawing.Point(510, 222);
             this.buttonChart.Name = "buttonChart";
             this.buttonChart.Size = new System.Drawing.Size(150, 71);
             this.buttonChart.TabIndex = 7;
@@ -109,25 +115,57 @@
             // 
             // chartEredmenyek
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartEredmenyek.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartEredmenyek.Legends.Add(legend1);
+            chartArea6.Name = "ChartArea1";
+            this.chartEredmenyek.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chartEredmenyek.Legends.Add(legend6);
             this.chartEredmenyek.Location = new System.Drawing.Point(718, 49);
             this.chartEredmenyek.Name = "chartEredmenyek";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartEredmenyek.Series.Add(series1);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chartEredmenyek.Series.Add(series6);
             this.chartEredmenyek.Size = new System.Drawing.Size(396, 387);
             this.chartEredmenyek.TabIndex = 2;
             this.chartEredmenyek.Text = "chart1";
+            // 
+            // listBoxEredmenyek
+            // 
+            this.listBoxEredmenyek.FormattingEnabled = true;
+            this.listBoxEredmenyek.ItemHeight = 16;
+            this.listBoxEredmenyek.Location = new System.Drawing.Point(510, 85);
+            this.listBoxEredmenyek.Name = "listBoxEredmenyek";
+            this.listBoxEredmenyek.Size = new System.Drawing.Size(120, 68);
+            this.listBoxEredmenyek.TabIndex = 8;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Location = new System.Drawing.Point(27, 335);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(685, 191);
+            this.panel1.TabIndex = 9;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
+            // 
+            // createTimer
+            // 
+            this.createTimer.Enabled = true;
+            this.createTimer.Interval = 3000;
+            this.createTimer.Tick += new System.EventHandler(this.CreateTimer_Tick);
+            // 
+            // conveyorTimer
+            // 
+            this.conveyorTimer.Enabled = true;
+            this.conveyorTimer.Interval = 10;
+            this.conveyorTimer.Tick += new System.EventHandler(this.ConveyorTimer_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1166, 527);
+            this.ClientSize = new System.Drawing.Size(1166, 555);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.listBoxEredmenyek);
             this.Controls.Add(this.chartEredmenyek);
             this.Controls.Add(this.buttonChart);
             this.Controls.Add(this.textBoxEdzok);
@@ -153,6 +191,10 @@
         private System.Windows.Forms.TextBox textBoxEdzok;
         private System.Windows.Forms.Button buttonChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartEredmenyek;
+        private System.Windows.Forms.ListBox listBoxEredmenyek;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Timer createTimer;
+        private System.Windows.Forms.Timer conveyorTimer;
     }
 }
 

@@ -17,6 +17,7 @@ namespace UnitTest.Test
             ]
         public void TestValidateDatum(System.DateTime datum, bool expectedResult)
         {
+            var form3 = new Form3();
             //Arrange
             var eredmenyController = new EredmenyController();
             //Act
