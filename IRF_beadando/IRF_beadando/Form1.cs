@@ -139,7 +139,7 @@ namespace IRF_beadando
             g.DrawLine(pen, 470, 80, 470, 110);
             Image imageFile = Image.FromFile("Images/gun.png");
             g.DrawImage(imageFile, new Rectangle(-15, -5, 100, 50));
-
+            g.DrawRectangle(new Pen(Color.Black, 2), 415, 0, 100, 110);
            
 
         }

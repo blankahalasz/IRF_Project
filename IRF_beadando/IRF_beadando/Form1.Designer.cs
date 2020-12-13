@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.listBoxEdzok = new System.Windows.Forms.ListBox();
             this.listBoxSportolok = new System.Windows.Forms.ListBox();
             this.labelEdzok = new System.Windows.Forms.Label();
@@ -44,6 +44,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.createTimer = new System.Windows.Forms.Timer(this.components);
             this.conveyorTimer = new System.Windows.Forms.Timer(this.components);
+            this.labelTabla = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chartEredmenyek)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,16 +116,16 @@
             // 
             // chartEredmenyek
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartEredmenyek.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartEredmenyek.Legends.Add(legend3);
-            this.chartEredmenyek.Location = new System.Drawing.Point(718, 49);
+            chartArea1.Name = "ChartArea1";
+            this.chartEredmenyek.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartEredmenyek.Legends.Add(legend1);
+            this.chartEredmenyek.Location = new System.Drawing.Point(758, 47);
             this.chartEredmenyek.Name = "chartEredmenyek";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartEredmenyek.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartEredmenyek.Series.Add(series1);
             this.chartEredmenyek.Size = new System.Drawing.Size(396, 387);
             this.chartEredmenyek.TabIndex = 2;
             this.chartEredmenyek.Text = "chart1";
@@ -143,7 +144,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Location = new System.Drawing.Point(27, 352);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(685, 191);
+            this.panel1.Size = new System.Drawing.Size(725, 191);
             this.panel1.TabIndex = 9;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
@@ -159,11 +160,21 @@
             this.conveyorTimer.Interval = 10;
             this.conveyorTimer.Tick += new System.EventHandler(this.ConveyorTimer_Tick);
             // 
+            // labelTabla
+            // 
+            this.labelTabla.AutoSize = true;
+            this.labelTabla.Location = new System.Drawing.Point(654, 329);
+            this.labelTabla.Name = "labelTabla";
+            this.labelTabla.Size = new System.Drawing.Size(55, 17);
+            this.labelTabla.TabIndex = 10;
+            this.labelTabla.Text = "Lőtábla";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1166, 555);
+            this.Controls.Add(this.labelTabla);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.listBoxEredmenyek);
             this.Controls.Add(this.chartEredmenyek);
@@ -195,6 +206,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer createTimer;
         private System.Windows.Forms.Timer conveyorTimer;
+        private System.Windows.Forms.Label labelTabla;
     }
 }
 
