@@ -47,6 +47,7 @@
             this.labelFelhnev = new System.Windows.Forms.Label();
             this.labelDatum = new System.Windows.Forms.Label();
             this.labelPont = new System.Windows.Forms.Label();
+            this.buttonCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEredmeny)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eredmenyBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -78,7 +79,7 @@
             this.dataGridViewEredmeny.Name = "dataGridViewEredmeny";
             this.dataGridViewEredmeny.RowHeadersWidth = 51;
             this.dataGridViewEredmeny.RowTemplate.Height = 24;
-            this.dataGridViewEredmeny.Size = new System.Drawing.Size(983, 150);
+            this.dataGridViewEredmeny.Size = new System.Drawing.Size(679, 394);
             this.dataGridViewEredmeny.TabIndex = 4;
             // 
             // eREDMENYIDDataGridViewTextBoxColumn
@@ -147,6 +148,7 @@
             this.textBoxSFelhnev.Name = "textBoxSFelhnev";
             this.textBoxSFelhnev.Size = new System.Drawing.Size(192, 22);
             this.textBoxSFelhnev.TabIndex = 5;
+            this.textBoxSFelhnev.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxSFelhnev_Validating);
             // 
             // textBoxFelhnev
             // 
@@ -154,6 +156,7 @@
             this.textBoxFelhnev.Name = "textBoxFelhnev";
             this.textBoxFelhnev.Size = new System.Drawing.Size(192, 22);
             this.textBoxFelhnev.TabIndex = 6;
+            this.textBoxFelhnev.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxFelhnev_Validating);
             // 
             // textBoxDatum
             // 
@@ -161,6 +164,7 @@
             this.textBoxDatum.Name = "textBoxDatum";
             this.textBoxDatum.Size = new System.Drawing.Size(192, 22);
             this.textBoxDatum.TabIndex = 7;
+            this.textBoxDatum.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxDatum_Validating);
             // 
             // textBoxPont
             // 
@@ -205,11 +209,23 @@
             this.labelPont.TabIndex = 12;
             this.labelPont.Text = "Elért pontszám";
             // 
+            // buttonCancel
+            // 
+            this.buttonCancel.CausesValidation = false;
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonCancel.Location = new System.Drawing.Point(218, 358);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(156, 43);
+            this.buttonCancel.TabIndex = 13;
+            this.buttonCancel.Text = "Mégsem";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1421, 450);
+            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.labelPont);
             this.Controls.Add(this.labelDatum);
             this.Controls.Add(this.labelFelhnev);
@@ -248,5 +264,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn edzoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sportoloDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource eredmenyBindingSource;
+        private System.Windows.Forms.Button buttonCancel;
     }
 }
