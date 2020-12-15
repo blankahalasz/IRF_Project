@@ -45,8 +45,7 @@ namespace IRF_beadando
 
             else
             {
-                e.Cancel = true;
-                textBoxSFelhnev.BackColor = Color.LightCoral;
+               textBoxSFelhnev.BackColor = Color.LightCoral;
             }
         }
 
@@ -72,8 +71,7 @@ namespace IRF_beadando
 
             else
             {
-                e.Cancel = true;
-                textBoxFelhnev.BackColor = Color.LightCoral;
+               textBoxFelhnev.BackColor = Color.LightCoral;
             }
         }
 
@@ -83,8 +81,7 @@ namespace IRF_beadando
 
             if (regex.IsMatch(textBoxDatum.Text))
             {
-                e.Cancel = false;
-
+               
                 if (!string.IsNullOrWhiteSpace(textBoxDatum.Text))
                 {
                     textBoxDatum.BackColor = Color.LightGreen;
@@ -94,14 +91,12 @@ namespace IRF_beadando
             else
             {
 
-                e.Cancel = true;
                 textBoxDatum.BackColor = Color.LightCoral;
                 MessageBox.Show("A dátumot yyy.mm.dd. formátumban adja meg!");
 
             }
 
         }
-
 
 
         private void ButtonMentes_Click(object sender, EventArgs e)
@@ -150,6 +145,11 @@ namespace IRF_beadando
             return Regex.IsMatch(
                 pont,
                 @"[0-9]{2,3}$");
+        }
+
+        private void ButtonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

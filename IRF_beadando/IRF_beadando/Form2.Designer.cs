@@ -37,43 +37,56 @@
             // 
             // textBoxFelhnev
             // 
+            this.textBoxFelhnev.BackColor = System.Drawing.Color.SeaShell;
+            this.textBoxFelhnev.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxFelhnev.ForeColor = System.Drawing.Color.Black;
             this.textBoxFelhnev.Location = new System.Drawing.Point(93, 63);
             this.textBoxFelhnev.Name = "textBoxFelhnev";
-            this.textBoxFelhnev.Size = new System.Drawing.Size(186, 22);
+            this.textBoxFelhnev.Size = new System.Drawing.Size(186, 26);
             this.textBoxFelhnev.TabIndex = 0;
             // 
             // textBoxJelszo
             // 
+            this.textBoxJelszo.BackColor = System.Drawing.Color.SeaShell;
+            this.textBoxJelszo.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxJelszo.ForeColor = System.Drawing.Color.Black;
             this.textBoxJelszo.Location = new System.Drawing.Point(93, 133);
             this.textBoxJelszo.Name = "textBoxJelszo";
-            this.textBoxJelszo.Size = new System.Drawing.Size(186, 22);
+            this.textBoxJelszo.Size = new System.Drawing.Size(186, 26);
             this.textBoxJelszo.TabIndex = 1;
             // 
             // buttonBelep
             // 
+            this.buttonBelep.BackColor = System.Drawing.Color.Maroon;
+            this.buttonBelep.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonBelep.ForeColor = System.Drawing.Color.Bisque;
             this.buttonBelep.Location = new System.Drawing.Point(350, 128);
             this.buttonBelep.Name = "buttonBelep";
             this.buttonBelep.Size = new System.Drawing.Size(95, 32);
             this.buttonBelep.TabIndex = 2;
             this.buttonBelep.Text = "Belépés";
-            this.buttonBelep.UseVisualStyleBackColor = true;
+            this.buttonBelep.UseVisualStyleBackColor = false;
             this.buttonBelep.Click += new System.EventHandler(this.ButtonBelep_Click);
             // 
             // labelFelhnev
             // 
             this.labelFelhnev.AutoSize = true;
-            this.labelFelhnev.Location = new System.Drawing.Point(93, 43);
+            this.labelFelhnev.Font = new System.Drawing.Font("Constantia", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFelhnev.ForeColor = System.Drawing.Color.Maroon;
+            this.labelFelhnev.Location = new System.Drawing.Point(92, 38);
             this.labelFelhnev.Name = "labelFelhnev";
-            this.labelFelhnev.Size = new System.Drawing.Size(107, 17);
+            this.labelFelhnev.Size = new System.Drawing.Size(148, 23);
             this.labelFelhnev.TabIndex = 3;
             this.labelFelhnev.Text = "Felhasználónév";
             // 
             // labelJelszo
             // 
             this.labelJelszo.AutoSize = true;
-            this.labelJelszo.Location = new System.Drawing.Point(93, 110);
+            this.labelJelszo.Font = new System.Drawing.Font("Constantia", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelJelszo.ForeColor = System.Drawing.Color.Maroon;
+            this.labelJelszo.Location = new System.Drawing.Point(92, 107);
             this.labelJelszo.Name = "labelJelszo";
-            this.labelJelszo.Size = new System.Drawing.Size(48, 17);
+            this.labelJelszo.Size = new System.Drawing.Size(63, 23);
             this.labelJelszo.TabIndex = 4;
             this.labelJelszo.Text = "Jelszó";
             // 
@@ -81,6 +94,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(499, 233);
             this.Controls.Add(this.labelJelszo);
             this.Controls.Add(this.labelFelhnev);

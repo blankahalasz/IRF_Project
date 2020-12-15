@@ -29,16 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonMentes = new System.Windows.Forms.Button();
             this.dataGridViewEredmeny = new System.Windows.Forms.DataGridView();
-            this.eREDMENYIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sFELHNEVFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eDZOFELHNEVFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dATUMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pONTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edzoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sportoloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eredmenyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxSFelhnev = new System.Windows.Forms.TextBox();
             this.textBoxFelhnev = new System.Windows.Forms.TextBox();
             this.textBoxDatum = new System.Windows.Forms.TextBox();
@@ -48,18 +41,29 @@
             this.labelDatum = new System.Windows.Forms.Label();
             this.labelPont = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.eREDMENYIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sFELHNEVFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eDZOFELHNEVFKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dATUMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pONTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edzoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sportoloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eredmenyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEredmeny)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eredmenyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonMentes
             // 
+            this.buttonMentes.BackColor = System.Drawing.Color.Tan;
+            this.buttonMentes.Font = new System.Drawing.Font("Constantia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonMentes.ForeColor = System.Drawing.Color.SeaShell;
             this.buttonMentes.Location = new System.Drawing.Point(32, 358);
             this.buttonMentes.Name = "buttonMentes";
-            this.buttonMentes.Size = new System.Drawing.Size(156, 43);
+            this.buttonMentes.Size = new System.Drawing.Size(156, 51);
             this.buttonMentes.TabIndex = 3;
             this.buttonMentes.Text = "Eredmények mentése";
-            this.buttonMentes.UseVisualStyleBackColor = true;
+            this.buttonMentes.UseVisualStyleBackColor = false;
             this.buttonMentes.Click += new System.EventHandler(this.ButtonMentes_Click);
             // 
             // dataGridViewEredmeny
@@ -75,12 +79,119 @@
             this.edzoDataGridViewTextBoxColumn,
             this.sportoloDataGridViewTextBoxColumn});
             this.dataGridViewEredmeny.DataSource = this.eredmenyBindingSource;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewEredmeny.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewEredmeny.GridColor = System.Drawing.Color.Snow;
             this.dataGridViewEredmeny.Location = new System.Drawing.Point(429, 53);
             this.dataGridViewEredmeny.Name = "dataGridViewEredmeny";
             this.dataGridViewEredmeny.RowHeadersWidth = 51;
             this.dataGridViewEredmeny.RowTemplate.Height = 24;
-            this.dataGridViewEredmeny.Size = new System.Drawing.Size(679, 394);
+            this.dataGridViewEredmeny.Size = new System.Drawing.Size(782, 394);
             this.dataGridViewEredmeny.TabIndex = 4;
+            // 
+            // textBoxSFelhnev
+            // 
+            this.textBoxSFelhnev.BackColor = System.Drawing.Color.Snow;
+            this.textBoxSFelhnev.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxSFelhnev.Location = new System.Drawing.Point(182, 53);
+            this.textBoxSFelhnev.Name = "textBoxSFelhnev";
+            this.textBoxSFelhnev.Size = new System.Drawing.Size(192, 26);
+            this.textBoxSFelhnev.TabIndex = 5;
+            this.textBoxSFelhnev.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxSFelhnev_Validating);
+            // 
+            // textBoxFelhnev
+            // 
+            this.textBoxFelhnev.BackColor = System.Drawing.Color.Snow;
+            this.textBoxFelhnev.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxFelhnev.Location = new System.Drawing.Point(182, 104);
+            this.textBoxFelhnev.Name = "textBoxFelhnev";
+            this.textBoxFelhnev.Size = new System.Drawing.Size(192, 26);
+            this.textBoxFelhnev.TabIndex = 6;
+            this.textBoxFelhnev.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxFelhnev_Validating);
+            // 
+            // textBoxDatum
+            // 
+            this.textBoxDatum.BackColor = System.Drawing.Color.Snow;
+            this.textBoxDatum.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxDatum.Location = new System.Drawing.Point(182, 161);
+            this.textBoxDatum.Name = "textBoxDatum";
+            this.textBoxDatum.Size = new System.Drawing.Size(192, 26);
+            this.textBoxDatum.TabIndex = 7;
+            this.textBoxDatum.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxDatum_Validating);
+            // 
+            // textBoxPont
+            // 
+            this.textBoxPont.BackColor = System.Drawing.Color.Snow;
+            this.textBoxPont.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxPont.Location = new System.Drawing.Point(182, 223);
+            this.textBoxPont.Name = "textBoxPont";
+            this.textBoxPont.Size = new System.Drawing.Size(192, 26);
+            this.textBoxPont.TabIndex = 8;
+            // 
+            // labelSFelhnev
+            // 
+            this.labelSFelhnev.AutoSize = true;
+            this.labelSFelhnev.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelSFelhnev.ForeColor = System.Drawing.Color.Maroon;
+            this.labelSFelhnev.Location = new System.Drawing.Point(8, 53);
+            this.labelSFelhnev.Name = "labelSFelhnev";
+            this.labelSFelhnev.Size = new System.Drawing.Size(170, 18);
+            this.labelSFelhnev.TabIndex = 9;
+            this.labelSFelhnev.Text = "Sportoló felhasználóneve";
+            // 
+            // labelFelhnev
+            // 
+            this.labelFelhnev.AutoSize = true;
+            this.labelFelhnev.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelFelhnev.ForeColor = System.Drawing.Color.Maroon;
+            this.labelFelhnev.Location = new System.Drawing.Point(8, 104);
+            this.labelFelhnev.Name = "labelFelhnev";
+            this.labelFelhnev.Size = new System.Drawing.Size(148, 18);
+            this.labelFelhnev.TabIndex = 10;
+            this.labelFelhnev.Text = "Edző felhasználóneve";
+            // 
+            // labelDatum
+            // 
+            this.labelDatum.AutoSize = true;
+            this.labelDatum.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelDatum.ForeColor = System.Drawing.Color.Maroon;
+            this.labelDatum.Location = new System.Drawing.Point(8, 161);
+            this.labelDatum.Name = "labelDatum";
+            this.labelDatum.Size = new System.Drawing.Size(100, 18);
+            this.labelDatum.TabIndex = 11;
+            this.labelDatum.Text = "Edzés dátuma";
+            // 
+            // labelPont
+            // 
+            this.labelPont.AutoSize = true;
+            this.labelPont.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelPont.ForeColor = System.Drawing.Color.Maroon;
+            this.labelPont.Location = new System.Drawing.Point(8, 223);
+            this.labelPont.Name = "labelPont";
+            this.labelPont.Size = new System.Drawing.Size(106, 18);
+            this.labelPont.TabIndex = 12;
+            this.labelPont.Text = "Elért pontszám";
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.BackColor = System.Drawing.Color.Tan;
+            this.buttonCancel.CausesValidation = false;
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonCancel.Font = new System.Drawing.Font("Constantia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonCancel.ForeColor = System.Drawing.Color.SeaShell;
+            this.buttonCancel.Location = new System.Drawing.Point(218, 358);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(156, 51);
+            this.buttonCancel.TabIndex = 13;
+            this.buttonCancel.Text = "Mégsem";
+            this.buttonCancel.UseVisualStyleBackColor = false;
+            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // eREDMENYIDDataGridViewTextBoxColumn
             // 
@@ -142,88 +253,11 @@
             // 
             this.eredmenyBindingSource.DataSource = typeof(IRF_beadando.Eredmeny);
             // 
-            // textBoxSFelhnev
-            // 
-            this.textBoxSFelhnev.Location = new System.Drawing.Point(182, 53);
-            this.textBoxSFelhnev.Name = "textBoxSFelhnev";
-            this.textBoxSFelhnev.Size = new System.Drawing.Size(192, 22);
-            this.textBoxSFelhnev.TabIndex = 5;
-            this.textBoxSFelhnev.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxSFelhnev_Validating);
-            // 
-            // textBoxFelhnev
-            // 
-            this.textBoxFelhnev.Location = new System.Drawing.Point(182, 104);
-            this.textBoxFelhnev.Name = "textBoxFelhnev";
-            this.textBoxFelhnev.Size = new System.Drawing.Size(192, 22);
-            this.textBoxFelhnev.TabIndex = 6;
-            this.textBoxFelhnev.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxFelhnev_Validating);
-            // 
-            // textBoxDatum
-            // 
-            this.textBoxDatum.Location = new System.Drawing.Point(182, 161);
-            this.textBoxDatum.Name = "textBoxDatum";
-            this.textBoxDatum.Size = new System.Drawing.Size(192, 22);
-            this.textBoxDatum.TabIndex = 7;
-            this.textBoxDatum.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxDatum_Validating);
-            // 
-            // textBoxPont
-            // 
-            this.textBoxPont.Location = new System.Drawing.Point(182, 223);
-            this.textBoxPont.Name = "textBoxPont";
-            this.textBoxPont.Size = new System.Drawing.Size(192, 22);
-            this.textBoxPont.TabIndex = 8;
-            // 
-            // labelSFelhnev
-            // 
-            this.labelSFelhnev.AutoSize = true;
-            this.labelSFelhnev.Location = new System.Drawing.Point(8, 53);
-            this.labelSFelhnev.Name = "labelSFelhnev";
-            this.labelSFelhnev.Size = new System.Drawing.Size(168, 17);
-            this.labelSFelhnev.TabIndex = 9;
-            this.labelSFelhnev.Text = "Sportoló felhasználóneve";
-            // 
-            // labelFelhnev
-            // 
-            this.labelFelhnev.AutoSize = true;
-            this.labelFelhnev.Location = new System.Drawing.Point(8, 104);
-            this.labelFelhnev.Name = "labelFelhnev";
-            this.labelFelhnev.Size = new System.Drawing.Size(147, 17);
-            this.labelFelhnev.TabIndex = 10;
-            this.labelFelhnev.Text = "Edző felhasználóneve";
-            // 
-            // labelDatum
-            // 
-            this.labelDatum.AutoSize = true;
-            this.labelDatum.Location = new System.Drawing.Point(8, 161);
-            this.labelDatum.Name = "labelDatum";
-            this.labelDatum.Size = new System.Drawing.Size(98, 17);
-            this.labelDatum.TabIndex = 11;
-            this.labelDatum.Text = "Edzés dátuma";
-            // 
-            // labelPont
-            // 
-            this.labelPont.AutoSize = true;
-            this.labelPont.Location = new System.Drawing.Point(8, 223);
-            this.labelPont.Name = "labelPont";
-            this.labelPont.Size = new System.Drawing.Size(102, 17);
-            this.labelPont.TabIndex = 12;
-            this.labelPont.Text = "Elért pontszám";
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.CausesValidation = false;
-            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(218, 358);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(156, 43);
-            this.buttonCancel.TabIndex = 13;
-            this.buttonCancel.Text = "Mégsem";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(1421, 450);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.labelPont);
