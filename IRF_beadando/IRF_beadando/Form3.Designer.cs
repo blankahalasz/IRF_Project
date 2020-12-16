@@ -60,7 +60,7 @@
             this.buttonMentes.ForeColor = System.Drawing.Color.SeaShell;
             this.buttonMentes.Location = new System.Drawing.Point(32, 358);
             this.buttonMentes.Name = "buttonMentes";
-            this.buttonMentes.Size = new System.Drawing.Size(156, 51);
+            this.buttonMentes.Size = new System.Drawing.Size(156, 59);
             this.buttonMentes.TabIndex = 3;
             this.buttonMentes.Text = "Eredmények mentése";
             this.buttonMentes.UseVisualStyleBackColor = false;
@@ -99,40 +99,44 @@
             // 
             this.textBoxSFelhnev.BackColor = System.Drawing.Color.Snow;
             this.textBoxSFelhnev.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxSFelhnev.Location = new System.Drawing.Point(182, 53);
+            this.textBoxSFelhnev.Location = new System.Drawing.Point(203, 53);
             this.textBoxSFelhnev.Name = "textBoxSFelhnev";
             this.textBoxSFelhnev.Size = new System.Drawing.Size(192, 26);
             this.textBoxSFelhnev.TabIndex = 5;
+            this.textBoxSFelhnev.TextChanged += new System.EventHandler(this.TextBoxSFelhnev_TextChanged);
             this.textBoxSFelhnev.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxSFelhnev_Validating);
             // 
             // textBoxFelhnev
             // 
             this.textBoxFelhnev.BackColor = System.Drawing.Color.Snow;
             this.textBoxFelhnev.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxFelhnev.Location = new System.Drawing.Point(182, 104);
+            this.textBoxFelhnev.Location = new System.Drawing.Point(203, 104);
             this.textBoxFelhnev.Name = "textBoxFelhnev";
             this.textBoxFelhnev.Size = new System.Drawing.Size(192, 26);
             this.textBoxFelhnev.TabIndex = 6;
+            this.textBoxFelhnev.TextChanged += new System.EventHandler(this.TextBoxSFelhnev_TextChanged);
             this.textBoxFelhnev.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxFelhnev_Validating);
             // 
             // textBoxDatum
             // 
             this.textBoxDatum.BackColor = System.Drawing.Color.Snow;
             this.textBoxDatum.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxDatum.Location = new System.Drawing.Point(182, 161);
+            this.textBoxDatum.Location = new System.Drawing.Point(203, 161);
             this.textBoxDatum.Name = "textBoxDatum";
             this.textBoxDatum.Size = new System.Drawing.Size(192, 26);
             this.textBoxDatum.TabIndex = 7;
+            this.textBoxDatum.TextChanged += new System.EventHandler(this.TextBoxSFelhnev_TextChanged);
             this.textBoxDatum.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxDatum_Validating);
             // 
             // textBoxPont
             // 
             this.textBoxPont.BackColor = System.Drawing.Color.Snow;
             this.textBoxPont.Font = new System.Drawing.Font("Constantia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxPont.Location = new System.Drawing.Point(182, 223);
+            this.textBoxPont.Location = new System.Drawing.Point(203, 223);
             this.textBoxPont.Name = "textBoxPont";
             this.textBoxPont.Size = new System.Drawing.Size(192, 26);
             this.textBoxPont.TabIndex = 8;
+            this.textBoxPont.TextChanged += new System.EventHandler(this.TextBoxSFelhnev_TextChanged);
             // 
             // labelSFelhnev
             // 
@@ -185,13 +189,12 @@
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Font = new System.Drawing.Font("Constantia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonCancel.ForeColor = System.Drawing.Color.SeaShell;
-            this.buttonCancel.Location = new System.Drawing.Point(218, 358);
+            this.buttonCancel.Location = new System.Drawing.Point(239, 358);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(156, 51);
+            this.buttonCancel.Size = new System.Drawing.Size(156, 59);
             this.buttonCancel.TabIndex = 13;
             this.buttonCancel.Text = "Mégsem";
             this.buttonCancel.UseVisualStyleBackColor = false;
-            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // eREDMENYIDDataGridViewTextBoxColumn
             // 

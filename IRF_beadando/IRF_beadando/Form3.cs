@@ -23,35 +23,46 @@ namespace IRF_beadando
             dataGridViewEredmeny.Columns[5].Visible = false;
             dataGridViewEredmeny.Columns[6].Visible = false;
         }
+
+        private void TextBoxSFelhnev_TextChanged(object sender, EventArgs e)
+        {
+            this.Validate();
+        }
+
         private void TextBoxSFelhnev_Validating(object sender, CancelEventArgs e)
         {
-            if (!String.IsNullOrEmpty(textBoxSFelhnev.Text))
+            if (String.IsNullOrEmpty(textBoxSFelhnev.Text))
             {
-                var sfelhasznalo = (from x in context.Sportoloes
-                                    where textBoxSFelhnev.Text == x.SFELH_NEV
-                                    select x).FirstOrDefault();
+                textBoxSFelhnev.BackColor = Color.White;
+                e.Cancel = false;
+            }
+            else
+            {
+                var sportolo = (from x in context.Sportoloes
+                                   where textBoxSFelhnev.Text == x.SFELH_NEV
+                                   select x).FirstOrDefault();
 
-                if (sfelhasznalo != null)
+                if (sportolo != null)
                 {
                     textBoxSFelhnev.BackColor = Color.LightGreen;
+                    e.Cancel = false;
                 }
                 else
                 {
-                    MessageBox.Show("Hibás felhasználónév");
+                    e.Cancel = true;
+                    textBoxSFelhnev.BackColor = Color.LightCoral;
                 }
-
-
-            }
-
-            else
-            {
-               textBoxSFelhnev.BackColor = Color.LightCoral;
             }
         }
 
         private void TextBoxFelhnev_Validating(object sender, CancelEventArgs e)
         {
-            if (!String.IsNullOrEmpty(textBoxFelhnev.Text))
+            if (String.IsNullOrEmpty(textBoxFelhnev.Text))
+            {
+                textBoxFelhnev.BackColor = Color.White;
+                e.Cancel = false;
+            }
+            else
             {
                 var felhasznalo = (from x in context.Edzoes
                                    where textBoxFelhnev.Text == x.FELH_NEV
@@ -60,39 +71,40 @@ namespace IRF_beadando
                 if (felhasznalo != null)
                 {
                     textBoxFelhnev.BackColor = Color.LightGreen;
+                    e.Cancel = false;
                 }
                 else
                 {
-                    MessageBox.Show("Hibás felhasználónév");
+                    e.Cancel = true;
+                    textBoxFelhnev.BackColor = Color.LightCoral;
                 }
-
-
             }
 
-            else
-            {
-               textBoxFelhnev.BackColor = Color.LightCoral;
-            }
         }
 
         private void TextBoxDatum_Validating(object sender, CancelEventArgs e)
         {
-            Regex regex = new Regex("(19|20)[0-9]{2}.(0[1-9]|1[012]).(0[1-9]|[12][0-9]|3[01])");
+            Regex regex = new Regex("^(19|20)[0-9]{2}.(0[1-9]|1[012]).(0[1-9]|[12][0-9]|3[01])$");
 
-            if (regex.IsMatch(textBoxDatum.Text))
+            if (string.IsNullOrEmpty(textBoxDatum.Text))
             {
-               
-                if (!string.IsNullOrWhiteSpace(textBoxDatum.Text))
-                {
-                    textBoxDatum.BackColor = Color.LightGreen;
-                }
-
+                textBoxDatum.BackColor = Color.White;
+                e.Cancel = false;
             }
+
             else
             {
+                if (regex.IsMatch(textBoxDatum.Text))
+                {
+                    e.Cancel = false;
+                    textBoxDatum.BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    e.Cancel = true;
+                    textBoxDatum.BackColor = Color.LightCoral;
 
-                textBoxDatum.BackColor = Color.LightCoral;
-                MessageBox.Show("A dátumot yyy.mm.dd. formátumban adja meg!");
+                }
 
             }
 
@@ -101,12 +113,7 @@ namespace IRF_beadando
 
         private void ButtonMentes_Click(object sender, EventArgs e)
         {
-            if (!ValidatePont(textBoxPont.Text))
-            {
-                MessageBox.Show("Nem megfelelő a pontszám!");
-            }
-
-            else
+            if (ValidatePont(textBoxPont.Text))
             {
                 Eredmeny ed = new Eredmeny();
 
@@ -122,22 +129,22 @@ namespace IRF_beadando
 
                 try
                 {
+                    eredmenyBindingSource.Add(ed);
                     context.SaveChanges();
 
                 }
                 catch (Exception ex)
                 {
-
                     MessageBox.Show(ex.Message);
-                }
-
-                dataGridViewEredmeny.Refresh();
-                dataGridViewEredmeny.Update();
+                } 
             }
-           
 
-                
-            
+            else
+            {
+                textBoxPont.BackColor = Color.LightCoral;
+                MessageBox.Show("Nem megfelelő a pontszám!");
+            }
+  
         }
 
         public bool ValidatePont(string pont)
@@ -147,9 +154,6 @@ namespace IRF_beadando
                 @"[0-9]{2,3}$");
         }
 
-        private void ButtonCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+
     }
 }

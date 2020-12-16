@@ -6,17 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnitTestProject
+namespace UnitTestProject.Test
 {
     public class EredmenyTestFixture
     {
         [Test,
-         TestCase ("abcd", false),
-         TestCase ("1", false),
-         TestCase ("1234", false),
-         TestCase ("123,4", false),
-         TestCase ("123", true)
-            ]
+        TestCase("abcd", false),
+        TestCase("1", false),
+        TestCase("1234", false),
+        TestCase("123", true)
+           ]
         public void TestValidatePont(string pont, bool expectedResult)
         {
             //Arrange
@@ -26,7 +25,9 @@ namespace UnitTestProject
             //Assert
             Assert.AreEqual(expectedResult, actualResult);
 
-            
         }
+
     }
 }
+
+

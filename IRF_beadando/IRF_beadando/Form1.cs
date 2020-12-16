@@ -33,37 +33,9 @@ namespace IRF_beadando
             listEdzok();
             Factory = new BulletFactory();
 
-
-
         }
 
-        private void CreateChart()
-        {
-            var selectedsportolo = ((Sportolo)listBoxSportolok.SelectedItem).SFELH_NEV;
-            var eredmeny = from x in context.Eredmenies
-                           where x.SFELH_NEV_FK == selectedsportolo
-                           select x;
-
-            chartEredmenyek.DataSource = eredmeny.ToList();
-
-            var series = chartEredmenyek.Series[0];
-            series.XValueType = ChartValueType.DateTime;
-            series.ChartType = SeriesChartType.Line;
-            series.XValueMember = ("Datum") ;
-            series.YValueMembers = "Pont";
-
-
-            var legend = chartEredmenyek.Legends[0];
-            legend.Enabled = false;
-
-            var chartArea = chartEredmenyek.ChartAreas[0];
-            chartArea.AxisX.MajorGrid.Enabled = false;
-            chartArea.AxisY.MajorGrid.Enabled = false;
-            chartArea.AxisY.IsStartedFromZero = false;
-
-        }
-
-       
+  
 
         public void listEdzok()
         {
@@ -96,20 +68,6 @@ namespace IRF_beadando
             
         }
 
-
-        private void ButtonChart_Click(object sender, EventArgs e)
-        {
-
-            CreateChart();
-
-        }
-
-        private void ButtonUjEredemeny_Click(object sender, EventArgs e)
-        {
-            Form3 f3 = new Form3();
-            f3.Show();
-        }
-
         private void ListBoxSportolok_SelectedIndexChanged(object sender, EventArgs e)
         {
             var sportolo = ((Sportolo)listBoxSportolok.SelectedItem).SFELH_NEV;
@@ -120,6 +78,39 @@ namespace IRF_beadando
             listBoxEredmenyek.DisplayMember = "PONT";
             listBoxEredmenyek.DataSource = eredmeny.ToList();
         }
+
+        private void ButtonChart_Click(object sender, EventArgs e)
+        {
+
+            CreateChart();
+
+        }
+
+        private void CreateChart()
+        {
+            var selectedsportolo = ((Sportolo)listBoxSportolok.SelectedItem).SFELH_NEV;
+            var eredmeny = from x in context.Eredmenies
+                           where x.SFELH_NEV_FK == selectedsportolo
+                           select x;
+
+            chartEredmenyek.DataSource = eredmeny.ToList();
+
+            var series = chartEredmenyek.Series[0];
+            series.XValueType = ChartValueType.DateTime;
+            series.ChartType = SeriesChartType.Line;
+            series.XValueMember = ("Datum");
+            series.YValueMembers = "Pont";
+
+
+            var legend = chartEredmenyek.Legends[0];
+            legend.Enabled = false;
+
+            var chartArea = chartEredmenyek.ChartAreas[0];
+            chartArea.AxisX.MajorGrid.Enabled = false;
+            chartArea.AxisY.MajorGrid.Enabled = false;
+            chartArea.AxisY.IsStartedFromZero = false;
+
+        }   
 
         private void Panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -171,6 +162,13 @@ namespace IRF_beadando
                 panel1.Controls.Remove(oldestBullet);
                 _bullets.Remove(oldestBullet);
             }
+        }
+
+        private void ButtonUjEredemeny_Click(object sender, EventArgs e)
+        {
+            Form3 f3 = new Form3();
+            f3.Show();
+
         }
     }
 }
